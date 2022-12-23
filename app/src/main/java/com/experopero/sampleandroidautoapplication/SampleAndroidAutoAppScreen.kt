@@ -10,7 +10,14 @@ class SampleAndroidAutoAppScreen(carContext: CarContext) : Screen(carContext) {
         val row = Row.Builder().setTitle("carAppLevel: $carAppLevel").build()
         val pane = Pane.Builder().addRow(row).build()
         return PaneTemplate.Builder(pane)
-            .setHeaderAction(Action.APP_ICON)
-            .build()
+            .setHeaderAction(Action.BACK)
+            .setActionStrip(
+                ActionStrip.Builder().addAction(
+                    Action.Builder()
+                        .setTitle("Next")
+                        .setOnClickListener { screenManager.push(NextScreen(carContext)) }
+                        .build()
+                ).build()
+            ).build()
     }
 }
