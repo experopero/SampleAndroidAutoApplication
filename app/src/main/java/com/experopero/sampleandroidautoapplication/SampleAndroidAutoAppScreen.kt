@@ -18,6 +18,15 @@ class SampleAndroidAutoAppScreen(carContext: CarContext) : Screen(carContext) {
                         .setOnClickListener { screenManager.push(NextScreen(carContext)) }
                         .build()
                 ).build()
-            ).build()
+            )
+            .setActionStrip(
+                ActionStrip.Builder().addAction(
+                    Action.Builder()
+                        .setTitle("Recoding")
+                        .setOnClickListener { screenManager.push(VoiceRecodingScreen(carContext)) }
+                        .build()
+                ).build()
+            )
+            .build()
     }
 }
