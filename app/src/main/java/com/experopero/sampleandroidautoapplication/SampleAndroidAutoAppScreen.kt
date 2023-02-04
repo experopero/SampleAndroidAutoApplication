@@ -27,6 +27,14 @@ class SampleAndroidAutoAppScreen(carContext: CarContext) : Screen(carContext) {
                         .build()
                 ).build()
             )
+            .setActionStrip(
+                ActionStrip.Builder().addAction(
+                    Action.Builder()
+                        .setTitle("Map")
+                        .setOnClickListener { screenManager.push(MapScreen(carContext)) }
+                        .build()
+                ).build()
+            )
             .build()
     }
 }
